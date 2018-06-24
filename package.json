@@ -1,0 +1,20 @@
+{
+  "name": "alutka_mowi_api",
+  "version": "1.0.0",
+  "description": "A node.js api with Alutka Kosson response.",
+  "main": "index.js",
+  "scripts": {
+    "test": "start server.js"
+  },
+  "keywords": [
+    "alutka",
+    "api"
+  ],
+  "author": "matsta25",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
+  }
+}
