@@ -7,6 +7,7 @@ const axios = require('axios');
 const Alutka = require('./models/alutkaSchema');
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 mongoose.connect(keys.mongodb.dbURL, () =>{
     console.log('connceted to mongo database');
