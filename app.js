@@ -6,6 +6,8 @@ const axios = require('axios');
 
 const Alutka = require('./models/alutkaSchema');
 
+app.set('view engine', 'ejs');
+
 mongoose.connect(keys.mongodb.dbURL, () =>{
     console.log('connceted to mongo database');
 })
@@ -21,8 +23,18 @@ app.use('/api',(req, res, next) => {
       })
 });    
 
+
+
+
+
 app.use('/', (req,res) => {
-    res.send('go to alutkaMowi.com');
+    axios.get('http://alutkamowi.herokuapp.com/api')
+    .then(function (response) {
+        res.render('pages/index', {text: response.data.text});
+    })
+    .catch(function (error) {
+        return error;
+    });
 })
     
 module.exports = app;
