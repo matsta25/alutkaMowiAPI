@@ -4,7 +4,7 @@
   "description": "A node.js api with Alutka Kosson response.",
   "main": "index.js",
   "scripts": {
-    "test": "start server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "alutka",
