@@ -13,7 +13,6 @@ mongoose.connect(keys.mongodb.dbURL, () =>{
     console.log('connceted to mongo database');
 })
 
-
 app.use('/api',(req, res, next) => {
     Alutka.count().exec(function (err, count) {
         var random = Math.floor(Math.random() * count)
@@ -23,10 +22,6 @@ app.use('/api',(req, res, next) => {
           })
       })
 });    
-
-
-
-
 
 app.use('/', (req,res) => {
     axios.get('http://alutkamowi.herokuapp.com/api')
